@@ -29,11 +29,6 @@ Both simple and multi field queries have been implemented. The search returns a 
 
 ## How to run:
 
-#### python3 indexer.py <xml file dump> 
-This function takes as input the corpus file and creates the entire index in a field separated manner. It also creates a vocabulary list and a file containg the title-id map. 
-Along with these files, it also creates the offsets for all the files. 
-
-#### python3 search.py
 This function opens a shell and asks for the query to be searched. It returns the top ten results from the Wikipedia corpus.
 + Run python3 indexer.py ./path of xml dump ./path of output(Inverted Index)
 + Now, run python3 search.py , wait for files to be loaded 
