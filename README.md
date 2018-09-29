@@ -29,7 +29,6 @@ Both simple and multi field queries have been implemented. The search returns a 
 
 ## How to run:
 
-This function opens a shell and asks for the query to be searched. It returns the top ten results from the Wikipedia corpus.
 + Run python3 indexer.py ./path of xml dump ./path of output(Inverted Index)
 + Now, run python3 search.py , wait for files to be loaded 
 + Now, input queries .
