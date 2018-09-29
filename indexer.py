@@ -27,7 +27,7 @@ def rem_stopwords(text):
 def stem(text):
 	return stemmer.stemWords(text)
     #return [stemmer.stem(word) for word in text]
-##### Process Text
+##### Process Text using regex
 def processText(text, title):
     #### References , Links, Categories below references & info,body, tilte above references.
     st1 = "== references == "
