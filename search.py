@@ -6,16 +6,6 @@ import sys
 from collections import defaultdict
 from random import randint
 
-def func(word):
-    if(word=="15" or word=="15th"):
-        print("Indian Independence Day")
-    elif(word=="26th"):
-        print("Indian Republic Day")
-    elif(word=="presid"):
-        print("Missile Man")    
-    elif(word=="prime"):
-        print("Atal Bihari")
-
 def remove_special(text):
     text = re.sub(r'[^A-Za-z0-9]+', r' ', text) #Remove Special Characters
     return text
@@ -141,7 +131,7 @@ def begin_search():
                 i+=1
             tokens = rem_stopwords(tokens)
             tokens = stem(tokens)
-            print("here",tokens)
+            #print("here",tokens)
             results, docFreq = query_fields(tokens, fields, fvocab)
             results = ranking(nfiles, 'f',results, docFreq)
         else:
@@ -152,19 +142,13 @@ def begin_search():
             results = ranking(nfiles, 's',results, docFreq)
 
         print('\nRelevant Results:')
-        print(query)
+        #print(query)
         if len(results) > 0:
             results = sorted(results, key=results.get, reverse=True)
             results = results[:10]
-            tem=randint(0,4)
-            cnt=0
             for key in results:
-                if(cnt==tem):
-                    func(tokens[0])
-                else:
-                    _,title = find_numfile(titleOffset, key,0,tem_val, titleFile, 'int')
-                    print(' '.join(title))
-                cnt+=1
+		_,title = find_numfile(titleOffset, key,0,tem_val, titleFile, 'int')
+		print(' '.join(title))
         end = timeit.default_timer()
         print('Time =', end-start)
 
